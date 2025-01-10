@@ -9,10 +9,18 @@
 
 
 # import abc
-from src.abc import is_num_odd
+from src.abc import is_num_odd, is_multiple_of_three
 
 def test_is_num_odd():
     assert is_num_odd(5) == "odd"
     assert is_num_odd(4) == "even"
     assert is_num_odd(0) == "neither odd nor even"
     assert is_num_odd(-1) == "neither odd nor even"
+
+def test_is_multiple_of_three():
+    assert is_multiple_of_three(3) == "yes"
+    assert is_multiple_of_three(9) == "yes"
+    assert is_multiple_of_three(10) == "no"
+    assert is_multiple_of_three(0) == "yes"
+    assert is_multiple_of_three(-3) == "yes"
+    assert is_multiple_of_three(-4) == "no"

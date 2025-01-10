@@ -8,8 +8,10 @@
 # from application.app.folder.file import func_name
 
 
+import pytest
 # import abc
-from src.abc import is_num_odd, is_multiple_of_three
+from src.abc import is_num_odd, is_multiple_of_three, reverse_string
+import time
 
 def test_is_num_odd():
     assert is_num_odd(5) == "odd"
@@ -17,10 +19,35 @@ def test_is_num_odd():
     assert is_num_odd(0) == "neither odd nor even"
     assert is_num_odd(-1) == "neither odd nor even"
 
+
+# Using pytest.mark to group certain tests together.
+# Here command "pytest -vm ft1_func_3" can be used to run only tests with this marker.
+@pytest.mark.ft1_func_3
 def test_is_multiple_of_three():
+    # Using time.sleep to simulate a long running test.
+    # Here command "pytest -n 2" can be used run long tests in parallel.
+    # Here command "pytest -k test_is_multiple_of_three" can be used to run only tests with this name.
+    # Here command "pytest -vm ft1_func_3 -n 4" can be used to run only tests with this marker in parallel.
+    # Here command "pytest -x" can be used to stop testing after first failure.
+    # Here command "pytest --maxfail=2" can be used to stop testing after 2 failures.
+
+    time.sleep(5)
     assert is_multiple_of_three(3) == "yes"
     assert is_multiple_of_three(9) == "yes"
     assert is_multiple_of_three(10) == "no"
     assert is_multiple_of_three(0) == "yes"
     assert is_multiple_of_three(-3) == "yes"
     assert is_multiple_of_three(-4) == "no"
+
+    
+@pytest.mark.ft1_func_3
+def test_reverse_string():
+    time.sleep(5)
+    assert reverse_string("hello") == "olleh"
+    assert reverse_string("world") == "dlrow"
+
+@pytest.mark.ft1_func_3
+def test_reverse_string_error():
+    time.sleep(5)
+    with pytest.raises(ValueError):
+        reverse_string(123)

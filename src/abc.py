@@ -16,11 +16,37 @@ def is_num_odd(x):
 
 
 def is_multiple_of_three(x):
+    """
+    Check if a number is a multiple of three.
+
+    Args:
+        x (int): The number to check.
+
+    Returns:
+        str: "yes" if the number is a multiple of three, otherwise "no".
+    """
     if x % 3 == 0:
         return "yes"
     else:
         return "no"
 
+
+def reverse_string(var):
+    """
+    Reverses the given string.
+
+    Args:
+        var (str): The string to be reversed.
+
+    Returns:
+        str: The reversed string.
+
+    Raises:
+        ValueError: If the input is not a string.
+    """
+    if not isinstance(var, str):
+        raise ValueError("Input must be a string")
+    return var[::-1]
 
 if __name__ == "__main__":
     main()

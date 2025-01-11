@@ -10,7 +10,7 @@
 
 import pytest
 # import abc
-from src.abc import is_num_odd, is_multiple_of_three, reverse_string
+from src.abc import is_num_odd, is_multiple_of_three, reverse_string, square_num
 import time
 
 def test_is_num_odd():
@@ -57,7 +57,7 @@ def test_reverse_string_error():
         reverse_string(123)
 
 
-@pytest.mark.skip(reason="Not implemented yet")
+# @pytest.mark.skip(reason="Not implemented yet")
 @pytest.mark.parametrize("input_value, expected", 
                            [(3, 9),
                             (4, 16),

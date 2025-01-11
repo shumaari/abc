@@ -7,6 +7,15 @@ def main():
 
 
 def is_num_odd(x):
+    """
+    Check if a number is odd or even or neither.
+
+    Args:
+        x (float): The number to check.
+
+    Returns:
+        str: "odd" if the number is a odd, "even" if the number is even, otherwise "neither odd nor even".
+    """
     if x <= 0 or int(x) != x:
         return "neither odd nor even"
     elif (x % 2):
@@ -47,6 +56,19 @@ def reverse_string(var):
     if not isinstance(var, str):
         raise ValueError("Input must be a string")
     return var[::-1]
+
+def square_num(x):
+    """
+    Returns square of a number.
+
+    Args:
+        x (float): The number to square.
+
+    Returns:
+        float: the number squared.
+    """
+    return x * x
+
 
 if __name__ == "__main__":
     main()

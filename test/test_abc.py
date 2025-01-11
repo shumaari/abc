@@ -40,14 +40,27 @@ def test_is_multiple_of_three():
     assert is_multiple_of_three(-4) == "no"
 
     
-@pytest.mark.ft1_func_3
-def test_reverse_string():
-    time.sleep(5)
-    assert reverse_string("hello") == "olleh"
-    assert reverse_string("world") == "dlrow"
+# @pytest.mark.ft1_func_3
+# Using pytest.mark.parametrize to run multiple tests with different inputs.
+@pytest.mark.parametrize("input_value, expected", 
+                           [("hello", "olleh"),
+                            ("12345", "54321"),
+                            ("a", "a")])
+def test_reverse_string(input_value, expected):
+    # assert reverse_string("world") == "dlrow"
+    assert reverse_string(input_value) == expected
 
 @pytest.mark.ft1_func_3
 def test_reverse_string_error():
     time.sleep(5)
     with pytest.raises(ValueError):
         reverse_string(123)
+
+
+@pytest.mark.skip(reason="Not implemented yet")
+@pytest.mark.parametrize("input_value, expected", 
+                           [(3, 9),
+                            (4, 16),
+                            (-1, 1),])
+def test_sqaure_num(input_value, expected):
+    assert square_num(input_value) == expected

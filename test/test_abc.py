@@ -62,5 +62,5 @@ def test_reverse_string_error():
                            [(3, 9),
                             (4, 16),
                             (-1, 1),])
-def test_sqaure_num(input_value, expected):
+def test_square_num(input_value, expected):
     assert square_num(input_value) == expected

@@ -1,0 +1,7 @@
+# python -m venv venv
+# source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+# pip install -r requirements.txt
+
+pytest
+pytest-xdist # for parallel testing
+pytest-parallel # for parallelism and concurrency testing

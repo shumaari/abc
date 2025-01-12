@@ -1,2 +1,4 @@
 *.pyc
 # __init__.py #  Needed for import in running tests
+# Ignore the .VSCode related directories
+.VSCode*

@@ -14,6 +14,14 @@ def is_num_odd(x):
     else:
         return "even"
 
+def get_square(x):
+    return x**2
+
+def get_exponent(x, exponent):
+    return x**exponent
+
+def get_exponentWithFunction(x, exponent):
+    return pow(x, exponent)
 
 if __name__ == "__main__":
     main()
